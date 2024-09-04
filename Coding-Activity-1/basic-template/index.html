@@ -19,7 +19,7 @@
     </div>
     <div class="forms">
         <div class="form">
-            <form>
+            <form id="form">
                 <h1>How are you? </h1>
                 <div class="sleepFormElement">
                     <input type="checkbox" id="relaxing" />
@@ -43,41 +43,32 @@
                     <label for="journalText"> Please enter in your journal </label>
                 </div>
                 <br>
-                <input type="submit" value="Log Day" />
+                <input type="submit" value="Log Day" id="journalSubmit" />
             </form>
         </div>
         <!-- The SVG is created using chatGPT -->
-        <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <svg id="svg" width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Background Bars (Max 8 hours) -->
-            <rect x="50" y="20" width="320" height="20" class="background-bar" />
-            <rect x="50" y="60" width="320" height="20" class="background-bar" />
-            <rect x="50" y="100" width="320" height="20" class="background-bar" />
-            <rect x="50" y="140" width="320" height="20" class="background-bar" />
+            <rect x="50" y="30" width="320" height="20" class="background-bar" />
+            <rect x="50" y="70" width="320" height="20" class="background-bar" />
+            <rect x="50" y="110" width="320" height="20" class="background-bar" />
+            <rect x="50" y="150" width="320" height="20" class="background-bar" />
     
             <!-- Filled Bars (Actual hours of sleep) -->
-            <rect x="50" y="20" width="240" height="20" class="bar" /> <!-- 6 hours -->
-            <rect x="50" y="60" width="280" height="20" class="bar" /> <!-- 7 hours -->
-            <rect x="50" y="100" width="160" height="20" class="bar" /> <!-- 4 hours -->
-            <rect x="50" y="140" width="320" height="20" class="bar" /> <!-- 8 hours -->
+            <rect x="50" y="30" width="240" height="20" class="bar" /> <!-- 6 hours -->
+            <rect x="50" y="70" width="280" height="20" class="bar" /> <!-- 7 hours -->
+            <rect x="50" y="110" width="160" height="20" class="bar" /> <!-- 4 hours -->
+            <rect x="50" y="150" width="320" height="20" class="bar" /> <!-- 8 hours -->
     
         </svg>
-    
-    </div>
-    <div class="postedEntries">
-        <div class="entry">
-            <p>Relaxed: Yes</p>
-            <p>Fun: Yes</p>
-            <p>Journal: Just wakin' up in the mornin', gotta thank God
-                I don't know, but today seems kinda odd
-                No barkin' from the dog, no smog
-                And mama cooked the breakfast with no hog
-                I got my grub on, but didn't pig out
-                Finally got a call from a girl I wanna dig out
-                Hooked it up for later as I hit the door
-                Thinkin', "Will I live another 24?"</p>
-            <p>8-28-2024</p>
+        <div id="parentAvg">
+        
         </div>
     </div>
+    <div id="postedEntries" class="postedEntries">
+        
+    </div>
+    
     
     
     <!-- Load external JS files -->

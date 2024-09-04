@@ -48,7 +48,10 @@ body {
 }
 
 .entry {
-    background-color: grey;
+    background-color: #575757;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 5px;
 }
 
 /* This is chatGPT generated, used it to make the form look nicer */
@@ -61,3 +64,8 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.postedEntries {
+    
+}
+
