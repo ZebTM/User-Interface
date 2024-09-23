@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "img": "src/assets/dummyImages/Dune.jpg"
+    },
+    {   
+        "title": "The Will of the Many",
+        "author": "James Islington",
+        "img": "src/assets/dummyImages/TheWillOfTheMany.jpg"
+    },
+    {   
+        "title": "Eragorn",
+        "author": "Christopher Paolini",
+        "img": "src/assets/dummyImages/Eragorn.png"
+    },
+    {   
+        "title": "The Fellowship of the Ring",
+        "author": "James Islington",
+        "img": "src/assets/dummyImages/TheFellowshipOfTheRing.jpg"
+    },
+    {   
+        "title": "The Two Towers",
+        "author": "James Islington",
+        "img": "src/assets/dummyImages/TheTwoTowers.gif"
+    },
+    {   
+        "title": "The Return of the King",
+        "author": "James Islington",
+        "img": "src/assets/dummyImages/TheReturnOfTheKing.gif"
+    }
+]

@@ -9,7 +9,7 @@
 
     // Theme Stuff
     let theme = "g90"; // "white" | "g10" | "g80" | "g90" | "g100"
-    $: document.documentElement.setAttribute("theme", theme);
+    // $: document.documentElement.setAttribute("theme", theme);
 
 
     // const books = [

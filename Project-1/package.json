@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.251",
     "@melt-ui/pp": "^0.3.2",
     "@melt-ui/svelte": "^0.83.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
@@ -17,10 +18,12 @@
     "flowbite-svelte": "^0.46.16",
     "flowbite-svelte-icons": "^1.6.1",
     "svelte": "^4.2.18",
+    "unplugin-icons": "^0.19.3",
     "vite": "^5.4.1"
   },
   "dependencies": {
     "@splidejs/svelte-splide": "^0.2.9",
+    "svelte-routing": "^2.13.0",
     "tailwindcss": "^3.4.11"
   }
 }
