@@ -44,9 +44,9 @@
         <div id="Books Reading" class="carousel">
             <Carousel colorTheme={colorTheme} cardList={curReadingList} title="Currently Reading"/>
         </div>
-        <div id="Books Planned" class="carousel">
+        <!-- <div id="Books Planned" class="carousel">
             <Carousel colorTheme={colorTheme} cardList={curReadingList} title="Planning to Read"/>
-        </div>
+        </div> -->
             
         <div id="Books Read" class="carousel">
             <Carousel colorTheme={colorTheme} cardList={prevReadingList} title="Finished Reading"/>
