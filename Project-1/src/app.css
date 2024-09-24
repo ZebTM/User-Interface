@@ -90,4 +90,5 @@ button:focus-visible {
 
 .chapterSelect {
   width: 10vw;
+  text-align: start;
 }

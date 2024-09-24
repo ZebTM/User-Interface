@@ -23,21 +23,22 @@
      * @param cardImgAltText
      */
     export let cardList;
+    export let colorTheme
 
     // Dummmy data
-    const generateSlides = ( length = 6, sig = 0 ) => {
-        return Array.from( { length } ).map( ( _, index ) => {
-            index = sig || index;
+    // const generateSlides = ( length = 6, sig = 0 ) => {
+    //     return Array.from( { length } ).map( ( _, index ) => {
+    //         index = sig || index;
 
-            return {
-                src: images[`../assets/dummyImages/image0` + String(index + 1) + `.jpg`],
-                alt: `Image ${ index }`,
-            };
-        } );
-    }
-    const slides = generateSlides();
+    //         return {
+    //             src: images[`../assets/dummyImages/image0` + String(index + 1) + `.jpg`],
+    //             alt: `Image ${ index }`,
+    //         };
+    //     } );
+    // }
+    // const slides = generateSlides();
 
-    const imgSize = '35rem'
+    // const imgSize = '35rem'
 
     const options = {
         perPage: 5,
@@ -55,7 +56,7 @@
           <!-- <img src={ slide.src } alt={ slide.alt }> -->
            <!-- This is fine, check the generate slides for now, eventually we should just be passing in the, books type as a parameter for an -->
           <!-- <img src={ card.src } alt={ card.imgalt }> -->
-          <CarouselCard img={card.img} title={card.title} />
+          <CarouselCard colorTheme={colorTheme} img={card.img} title={card.title} />
         </SplideSlide>
       { /each }
     </Splide>

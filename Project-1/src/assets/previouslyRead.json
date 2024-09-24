@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Horton Hears A Who",
+        "author": "Dr. Seuss",
+        "img": "src/assets/dummyImages/HortonHearsAWho.jpg"
+    },
+    {   
+        "title": "Don Quixote",
+        "author": "Miguel De Cervantes Saavedra",
+        "img": "src/assets/dummyImages/DonQuixote.jpg"
+    },
+    {   
+        "title": "The Grapes Of Wrath",
+        "author": "John Steinbeck",
+        "img": "src/assets/dummyImages/TheGrapesOfWrath.jpg"
+    },
+    {   
+        "title": "The Count Of Monte Cristo",
+        "author": "James Islington",
+        "img": "src/assets/dummyImages/CountOfMonte.jpg"
+    },
+    {   
+        "title": "Slaughterhouse-Five",
+        "author": "Kurt Vonnegut",
+        "img": "src/assets/dummyImages/SlaughterhouseFive.jpg"
+    },
+    {   
+        "title": "Catch-22",
+        "author": "Joseph Heller",
+        "img": "src/assets/dummyImages/Catch-22.jpg"
+    }
+]

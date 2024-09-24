@@ -4,72 +4,116 @@
         Button,
         Dropdown,
         TextInput,
-        TextArea
+        TextArea,
+        Form,
+        FormGroup
      } from "carbon-components-svelte";
 
-    // Theme Stuff
-    let theme = "g90"; // "white" | "g10" | "g80" | "g90" | "g100"
-    // $: document.documentElement.setAttribute("theme", theme);
+    import Header from "./lib/Header.svelte";
+    import bookList from './assets/BookList.json';
+    import { navigate } from "svelte-routing";
+    export let colorTheme
+    /**
+     * 
+     * @param list - Array of strings
+     */
+     let createIndexedBookList = ( list = bookList ) => {
+        // @ts-ignore
+        return Array.from(  list ).map( ( book, index ) => {
+            return {
+                text: book,
+                id: `${index}`
+            }
+        })
+    }
 
-
-    // const books = [
-    //     { id: "0", text: "Slack" },
-    //     { id: "1", text: "Email" },
-    //     { id: "2", text: "Fax" },
-    // ]
-
-    const chapters = [
-        { id: "0", text: "Chapter 1" },
-        { id: "1", text: "Chapter 2" },
-        { id: "2", text: "Chapter 3" },
-        { id: "3", text: "Chapter 4" },
-        { id: "4", text: "Chapter 5" },
-        { id: "5", text: "Chapter 6" },
-        { id: "6", text: "Chapter 7" },
-        { id: "7", text: "Chapter 8" },
-        { id: "8", text: "Chapter 9" },
-        { id: "9", text: "Chapter 10" },
-    ]
-
+    const chapters = createIndexedBookList()
     const rating = [
-        { id: "0", text: "1"},
-        { id: "1", text: "2"},
+        { id: "0", text: "5"},
+        { id: "1", text: "4"},
         { id: "2", text: "3"},
-        { id: "3", text: "4"},
-        { id: "4", text: "5"} 
+        { id: "3", text: "2"},
+        { id: "4", text: "1"} 
     ]
 
+    // Form Inputs Here
+    let bookTitleId = "0";
+    let reviewTitle;
+    let bookRatingId = "0";
+    let reviewBody;
 
+    
 
+    let onSubmitOfForm = ( event ) => {
+        event.preventDefault();
+        console.log(event);
+
+        let formData = {
+            book: chapters[ Number(bookTitleId) ].text,
+            reviewTitle: reviewTitle,
+            bookRating: rating[ Number(bookRatingId) ].text,
+            reviewBody: reviewBody
+        }  
+
+        let camelCaseTitle = formData.book.replaceAll(' ', '');
+
+        let curComments = localStorage.getItem( camelCaseTitle );
+        if  ( !curComments) {
+            // @ts-ignore
+            curComments = []
+        } else {
+            curComments = JSON.parse(curComments);
+        }
+
+        let numberOfComments = Number(localStorage.getItem( 'totalComments' ))
+        if ( numberOfComments === 0 ) {
+            console.log(' Do nothing for now, need to')
+        };
+        numberOfComments = 1 + numberOfComments;
+        localStorage.setItem('totalComments', String(numberOfComments))
+
+        // @ts-ignore
+        curComments.unshift(formData);
+        localStorage.setItem( camelCaseTitle, JSON.stringify( curComments) );
+
+        navigate('/reviews/' + camelCaseTitle);
+    }
+ 
 </script> 
 
+<!-- <Header /> -->
+<main>
+<Form
+    on:submit={onSubmitOfForm}>
+    <FormGroup>
+        <Dropdown
+            class="chapterSelect"
+            titleText="Book"
+            bind:selectedId={bookTitleId}
+            items={chapters}
+            />
 
-<div class="width">
-    <Dropdown
-        class="chapterSelect"
-        hideLabel
-        titleText="Contact"
-        selectedId="0"
-        items={chapters}
-    />
-
-    <TextInput 
-        labelText = "Title"
-        placeholder = "Enter title . . ." />
-    <Dropdown
-        class="chapterSelect"
-        hideLabel
-        titleText="Contact"
-        selectedId="0"
-        items={rating}
-    />
+        <TextInput 
+            labelText = "Title"
+            placeholder = "Enter title . . ." 
+            bind:value={reviewTitle}
+            />
+        <Dropdown
+            class="chapterSelect"
+            titleText="Rating"
+            bind:selectedId={bookRatingId}
+            items={rating}
+            />
+    </FormGroup>
+    
 
     <TextArea
         labelText = "Book Review"
-        placeholder = "Enter a description..." />
-    <Button class = "button"> Submit </Button>
-</div>
-
+        placeholder = "Enter a description..."
+        bind:value={reviewBody} />
+    <Button type="submit" class="button"> Submit </Button>
+</Form>
+</main>
 
 <style>
     @import "./app.css";
@@ -79,5 +123,10 @@
     }
     Button {
         text-align: center;
+    }
+
+    main {
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 </style>

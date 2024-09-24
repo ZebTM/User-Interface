@@ -5,7 +5,7 @@
         "img": "src/assets/dummyImages/Dune.jpg"
     },
     {   
-        "title": "The Will of the Many",
+        "title": "The Will Of The Many",
         "author": "James Islington",
         "img": "src/assets/dummyImages/TheWillOfTheMany.jpg"
     },
@@ -15,7 +15,7 @@
         "img": "src/assets/dummyImages/Eragorn.png"
     },
     {   
-        "title": "The Fellowship of the Ring",
+        "title": "The Fellowship Of The Ring",
         "author": "James Islington",
         "img": "src/assets/dummyImages/TheFellowshipOfTheRing.jpg"
     },
@@ -25,7 +25,7 @@
         "img": "src/assets/dummyImages/TheTwoTowers.gif"
     },
     {   
-        "title": "The Return of the King",
+        "title": "The Return Of The King",
         "author": "James Islington",
         "img": "src/assets/dummyImages/TheReturnOfTheKing.gif"
     }

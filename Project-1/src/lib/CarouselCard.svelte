@@ -1,5 +1,6 @@
 <script>
-
+    import { navigate, Link, Router, Route } from "svelte-routing";
+    import Review from "../Review.svelte";
 
     /**
      * 
@@ -8,16 +9,33 @@
     export const description = '';
     export let img;
     export let altText = 'unknown image';
+    export let colorTheme;
     // export let imgSize;
 
     let navigateToBook = () => {
-        console.log( "Clicked on " + title);
+        // console.log( "Clicked on " + title);
+        let camelCase = title.replaceAll(' ', '');
+
+        navigate('/reviews/' + camelCase);
+        // return '/reviews/' + camelCase;
+    }
+
+    let getCardProps = () => {
+        return {
+            title: title,
+            description, 
+            img,
+            altText
+        }
     }
 </script>
-<div>
-    <button class="carousel-card" on:click={ navigateToBook }>
-        <img src={img} alt={altText} />
 
+    <!-- <Route path="/reviews/:book" let:params>
+        <Review book={title} />
+    </Route> -->
+<div>
+    <button class={colorTheme === "darkMode" ? "carousel-card" : "carousel-card-light"} on:click={navigateToBook} >
+        <img src={img} alt={altText} />
     </button>
 </div>
 <p>{title}</p>
@@ -26,6 +44,25 @@
     .carousel-card {
         text-align: center;
         background-color: #262626;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 100%;
+        border-color: transparent;
+        width: 100%;
+        /* width: 150px; */
+        /* padding-top: 150%; This ensures a 2:3 aspect ratio (150px width, 225px height) */
+        /* position: relative; */
+        /* overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
+        /* background-image: url(img); */
+    }
+
+
+    .carousel-card-light {
+        text-align: center;
+        color: white;
+        background-color: rgb(100, 116, 139);
         border-radius: 5px;
         overflow: hidden;
         height: 100%;
